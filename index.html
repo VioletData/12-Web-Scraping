@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/style.css">
+</head>
+
+
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div><!--/jumbotron text-center-->
+  </div><!--/container-fluid-->
+  <div class="container-fluid"></div>
+<body>    
+     <h3><strong>Latest Mars News</strong></h3>
+     <h4><strong>{{ solar_system.news_title }}</strong></h4>
+     <p>{{ solar_system.news_p }}</p>
+
+  <div class="row">
+  <div class="col-md-8">  
+     <h3><strong>Featured Mars Image</strong></h3>
+     <img src="{{solar_system.featured_image_img}}" width="1200" height="800" alt="Mars">
+  </div><!--/col-md-8-->
+
+  <div class="col-md-4">
+    <div class="background">
+        <div class="transbox">
+            <h4><strong>Current Weather on Mars</strong></h4>
+            <p>{{ solar_system.mars_weather }}</p>
+        </div><!--/transbox-->
+      </div><!--/background-->
+
+      <div class="row"> 
+      <div class="col-md-12">
+                    <h4><strong>Mars Facts</strong></h4>
+                    {{ solar_system.mars_facts | safe }}
+              
+        </div><!--/col-md-12-->
+      </div> <!--/row-->
+  </div><!--/col-md-4-->
+</div> <!--/row-->
+</div><!--/container-fluid-->
+
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-12">
+          <h4><center><strong>Mars Hemispheres</strong></center></h4>
+      </div><!--/col-md-12-->   
+    <div class="col-md-6">
+              
+              <img src="{{solar_system.cerberus_image_img}}" width="400" height="400" alt="cerberus">
+              <h5>{{ solar_system.title1 }}</h5>
+              <img src="{{solar_system.schiaparelli_image_img}}" width="400" height="400" alt="Schiaparelli">
+              <h5>{{ solar_system.title2 }}</h5>
+          
+    </div><!--/col-md-6-->
+
+    <div class="col-md-6">
+        <img src="{{solar_system.syrtis_image_img}}" width="400" height="400" alt="Syrtis">
+        <h5>{{ solar_system.title3 }}</h5>
+        <img src="{{solar_system.valles_image_img}}" width="400" height="400" alt="Valles">
+        <h5>{{ solar_system.title4 }}</h5>
+
+    </div><!--/col-md-6-->
+  
+  </div><!--/row-->
+</div><!--/container-fluid-->
+
+</body>
+
+</html>
